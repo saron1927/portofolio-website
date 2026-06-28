@@ -124,7 +124,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="relative z-10 flex justify-center hidden lg:flex"
+          className="relative z-10 flex justify-center"
         >
           <div className="relative w-80 h-80 md:w-96 md:h-96">
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary blur-2xl opacity-40 animate-pulse"></div>
