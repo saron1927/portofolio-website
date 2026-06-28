@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { Download, ChevronRight, Briefcase } from 'lucide-react';
+import profileImg from '../assets/profile.jpg';
 
 const TypewriterText = () => {
   const words = ["Software Engineer", "Finance Student", "Digital Marketer"];
@@ -131,7 +132,7 @@ const Hero = () => {
               {/* Profile Image PlaceHolder */}
               <div className="w-full h-full rounded-full bg-[#1a1a24] overflow-hidden relative">
                 <img 
-                  src="/profile.jpg" 
+                  src={profileImg} 
                   alt="Saron Welyu" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-105" 
                 />
