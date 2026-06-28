@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #dbb03b;
+  --color-primary-light: #ebd075;
+  --color-secondary: #547b8c;
+  --color-dark-surface: rgba(255, 255, 255, 0.03);
+  --color-dark-border: rgba(255, 255, 255, 0.05);
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#171513] text-white selection:bg-primary/30 selection:text-white cursor-none overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-[12px] border border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .glass-card {
+    @apply bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ebd075] via-[#dbb03b] to-[#547b8c];
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-[#dbb03b] to-[#547b8c];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171513;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbb03b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ebd075;
+}
+
+/* Custom Cursor Base */
+.custom-cursor-dot, .custom-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #dbb03b;
+}
+
+.custom-cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(219, 176, 59, 0.5);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Base styles for typing animation */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.glow-effect {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(219,176,59,0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
